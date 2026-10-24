@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://leertasten-klicker.github.io/sitemap.xml

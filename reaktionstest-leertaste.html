@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Reaktionszeit Test mit der Leertaste – in Millisekunden</title>
+<meta name="description" content="Teste deine Reaktionszeit mit der Leertaste: Drück, sobald die Fläche grün wird. Fünf Runden, Durchschnitt in Millisekunden und Bestwert.">
+<link rel="canonical" href="https://leertasten-klicker.github.io/reaktionstest-leertaste">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:site_name" content="Leertasten-Klicker">
+<meta property="og:locale" content="de_DE">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Reaktionszeit Test mit der Leertaste – in Millisekunden">
+<meta property="og:description" content="Teste deine Reaktionszeit mit der Leertaste: Drück, sobald die Fläche grün wird. Fünf Runden, Durchschnitt in Millisekunden und Bestwert.">
+<meta property="og:url" content="https://leertasten-klicker.github.io/reaktionstest-leertaste">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#1f5fd6">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<script>try{var t=localStorage.getItem("lk_theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<link rel="stylesheet" href="/style.css">
+<!-- Google AdSense: hier den AdSense-Code einfügen -->
+<!-- Google Analytics (optional): hier den gtag.js-Code einfügen -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Leertasten-Klicker","url":"https://leertasten-klicker.github.io/","inLanguage":"de-DE"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Reaktionstest mit der Leertaste","url":"https://leertasten-klicker.github.io/reaktionstest-leertaste","inLanguage":"de-DE","applicationCategory":"GameApplication","operatingSystem":"Alle","browserRequirements":"JavaScript erforderlich","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"description":"Teste deine Reaktionszeit mit der Leertaste: Drück, sobald die Fläche grün wird. Fünf Runden, Durchschnitt in Millisekunden und Bestwert."}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Was ist eine gute Reaktionszeit mit der Leertaste?","acceptedAnswer":{"@type":"Answer","text":"Zwischen 250 und 300 Millisekunden ist normal. Unter 250 ist sehr gut, unter 200 ausgezeichnet."}},{"@type":"Question","name":"Was passiert, wenn ich zu früh drücke?","acceptedAnswer":{"@type":"Answer","text":"Die Runde zählt nicht. Du siehst „Zu früh!“ und wiederholst sie mit der Leertaste."}},{"@type":"Question","name":"Warum ist meine Reaktionszeit auf dem Handy langsamer?","acceptedAnswer":{"@type":"Answer","text":"Touchscreens und manche Browser auf Mobilgeräten haben eine zusätzliche Eingabeverzögerung."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Start","item":"https://leertasten-klicker.github.io/"},{"@type":"ListItem","position":2,"name":"Reaktionstest","item":"https://leertasten-klicker.github.io/reaktionstest-leertaste"}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Zum Inhalt springen</a>
+<header class="site-header">
+  <div class="container nav">
+    <a class="logo" href="/"><svg viewBox="0 0 34 22" aria-hidden="true"><rect x="1" y="1" width="32" height="18" rx="5" fill="var(--brand)"/><rect x="1" y="1" width="32" height="15" rx="5" fill="var(--brand-2)"/><rect x="9" y="7" width="16" height="3" rx="1.5" fill="#fff"/></svg><span>Leertasten-Klicker</span></a>
+    <nav aria-label="Hauptmenü"><ul class="menu" id="menu"><li><a href="/">Leertasten-Klicker</a></li><li><a href="/leertaste-zaehler">Leertaste Zähler</a></li><li><a href="/reaktionstest-leertaste" aria-current="page">Reaktionstest</a></li><li><a href="/ratgeber">Ratgeber</a></li><li><a href="/ueber-uns">Über uns</a></li></ul></nav>
+    <div class="nav-tools">
+      <button class="icon-btn" id="themeToggle" type="button" aria-label="Helles oder dunkles Design"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+      <button class="icon-btn menu-toggle" id="menuToggle" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+<main id="main">
+<div class="container"><nav class="breadcrumb" aria-label="Brotkrumen"><a href="/">Start</a> / Reaktionstest</nav><div class="hero"><p class="eyebrow">Reaktionstest</p><h1>Reaktionszeit-Test mit der Leertaste</h1><p class="lede">Hier zählt nicht, wie oft du drückst, sondern wie schnell du reagierst. Warte auf Grün, dann sofort die Leertaste.</p></div><section class="tool" aria-label="Reaktionstest mit der Leertaste">
+  <div class="react-pad" id="rpad" role="button" tabindex="0" aria-live="polite"><div><b>Leertaste drücken zum Start</b></div></div>
+  <div class="rounds" id="rounds"></div>
+  <div class="actions"><button class="btn primary" id="restartBtn" type="button">Neuer Test <small>(Enter)</small></button></div>
+  <div class="result" id="result" hidden>
+    <div class="result-head">
+      <div class="rank"><span id="rName">–</span><small id="rNote"></small></div>
+      <span class="badge" id="pbBadge" hidden>Neuer Bestwert</span>
+    </div>
+    <div class="stats">
+      <div class="stat main"><b id="rAvg">–</b><span>Durchschnitt</span></div>
+      <div class="stat"><b id="rFast">–</b><span>Schnellste Runde</span></div>
+      <div class="stat"><b id="rBest">–</b><span>Dein Bestwert</span></div>
+      <div class="stat"><b>5</b><span>Runden</span></div>
+    </div>
+  </div>
+  <button class="linkbtn" id="clearBtn" type="button">Bestwert löschen</button>
+</section>
+<article class="content">
+<h2>So läuft der Reaktionstest</h2>
+<ol>
+<li>Drück die Leertaste oder tippe auf die Fläche. Sie wird rot.</li>
+<li>Warte. Nach einer zufälligen Zeit zwischen 1,5 und 4 Sekunden wird sie grün.</li>
+<li>Drück so schnell wie möglich. Deine Zeit erscheint in Millisekunden.</li>
+<li>Nach fünf Runden bekommst du Durchschnitt, schnellste Runde und eine Einordnung.</li>
+</ol>
+<p>Drückst du zu früh, zählt die Runde nicht und wird wiederholt. Raten lohnt sich also nicht.</p>
+
+<h2>Was ist eine gute Reaktionszeit?</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Durchschnitt</th><th>Einordnung</th></tr></thead>
+<tbody>
+<tr><td class="num">unter 200 ms</td><td>Blitzschnell, typisch für trainierte Gamer</td></tr>
+<tr><td class="num">200–249 ms</td><td>Sehr gut</td></tr>
+<tr><td class="num">250–299 ms</td><td>Durchschnitt</td></tr>
+<tr><td class="num">300–379 ms</td><td>Etwas langsam</td></tr>
+<tr><td class="num">ab 380 ms</td><td>Langsam, oft durch Müdigkeit oder Ablenkung</td></tr>
+</tbody></table></div>
+
+<h2>Was deine Zeit beeinflusst</h2>
+<ul>
+<li><strong>Bildschirm:</strong> Monitore mit 120 oder 144 Hz zeigen das Grün schneller an als 60-Hz-Bildschirme. Das kann 5 bis 10 Millisekunden ausmachen.</li>
+<li><strong>Eingabegerät:</strong> Funktastaturen und Touchscreens haben eine kleine Verzögerung.</li>
+<li><strong>Tagesform:</strong> Müdigkeit, Koffein und Konzentration verändern die Reaktionszeit spürbar.</li>
+<li><strong>Übung:</strong> Nach einigen Durchgängen werden die meisten ein wenig schneller, weil sie sich an den Ablauf gewöhnen.</li>
+</ul>
+
+<h2>Reaktion und Tempo sind zwei Fähigkeiten</h2>
+<p>Schnelles Reagieren und schnelles Hämmern hängen weniger zusammen, als man denkt. Wer hier gut ist, muss im <a href="/">Leertasten-Klicker</a> nicht automatisch vorne liegen. Probier beide Tests aus und vergleiche.</p>
+<h2 id="faq">Häufige Fragen</h2><details><summary>Was ist eine gute Reaktionszeit mit der Leertaste?</summary><p>Zwischen 250 und 300 Millisekunden ist normal. Unter 250 ist sehr gut, unter 200 ausgezeichnet.</p></details>
+<details><summary>Was passiert, wenn ich zu früh drücke?</summary><p>Die Runde zählt nicht. Du siehst „Zu früh!“ und wiederholst sie mit der Leertaste.</p></details>
+<details><summary>Warum ist meine Reaktionszeit auf dem Handy langsamer?</summary><p>Touchscreens und manche Browser auf Mobilgeräten haben eine zusätzliche Eingabeverzögerung.</p></details></article></div>
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="foot">
+      <div>
+        <a class="logo" href="/"><svg viewBox="0 0 34 22" aria-hidden="true"><rect x="1" y="1" width="32" height="18" rx="5" fill="var(--brand)"/><rect x="1" y="1" width="32" height="15" rx="5" fill="var(--brand-2)"/><rect x="9" y="7" width="16" height="3" rx="1.5" fill="#fff"/></svg><span>Leertasten-Klicker</span></a>
+        <p>Kostenlose Tests im Browser: Wie oft und wie schnell drückst du die Leertaste? Ohne Anmeldung, ohne Download.</p>
+      </div>
+      <div><p class="foot-h">Tests</p><ul>
+        <li><a href="/">Leertasten-Klicker</a></li>
+        <li><a href="/leertaste-zaehler">Leertaste Zähler</a></li>
+        <li><a href="/reaktionstest-leertaste">Reaktionstest</a></li>
+      </ul></div>
+      <div><p class="foot-h">Nach Zeit</p><ul><li><a href="/1-sekunde">Leertaste 1 Sekunde</a></li><li><a href="/5-sekunden">Leertaste 5 Sekunden</a></li><li><a href="/10-sekunden">Leertaste 10 Sekunden</a></li><li><a href="/30-sekunden">Leertaste 30 Sekunden</a></li><li><a href="/60-sekunden">Leertaste 60 Sekunden</a></li><li><a href="/100-sekunden">Leertaste 100 Sekunden</a></li></ul></div>
+      <div><p class="foot-h">Seite</p><ul>
+        <li><a href="/ratgeber">Ratgeber</a></li>
+        <li><a href="/ueber-uns">Über uns</a></li>
+        <li><a href="/kontakt">Kontakt</a></li>
+        <li><a href="/datenschutz">Datenschutz</a></li>
+        <li><a href="/nutzungsbedingungen">Nutzungsbedingungen</a></li>
+        <li><a href="/haftungsausschluss">Haftungsausschluss</a></li>
+      </ul></div>
+    </div>
+    <div class="copy"><span>© <span id="year">2026</span> Leertasten-Klicker</span><span>Für schnelle Daumen</span></div>
+  </div>
+</footer>
+<script src="/main.js" defer></script>
+<script src="/reaktion.js" defer></script>
+</body>
+</html>
