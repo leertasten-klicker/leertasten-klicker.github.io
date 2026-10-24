@@ -31,7 +31,7 @@
 
   var duration = FIXED ? +(tool.getAttribute('data-default') || 10) : store.get('dur' + location.pathname, +(tool.getAttribute('data-default') || 10));
   var sound = store.get('sound', false);
-  var state = 'idle', presses = [], t0 = 0, raf = 0, held = false, lastRun = null;
+  var state = 'idle', presses = [], t0 = 0, raf = 0, endT = 0, held = false, lastRun = null;
   var pad = $('pad');
   var audio = null;
 
@@ -63,7 +63,7 @@
   }
 
   function reset() {
-    cancelAnimationFrame(raf);
+    cancelAnimationFrame(raf); clearTimeout(endT);
     state = 'idle'; presses = []; held = false;
     $('sHits').textContent = '0';
     $('sCps').textContent = '0,00';
@@ -86,6 +86,7 @@
       $('legend').innerHTML = duration === 0 ? 'Zählt · <em>Enter</em> beendet' : 'Weiter <em>so</em>';
       $('stopBtn').hidden = duration !== 0;
       raf = requestAnimationFrame(tick);
+      if (duration) endT = setTimeout(function () { if (state === 'running') finish(duration); }, duration * 1000 + 20);
     }
     presses.push(now - t0);
     $('sHits').textContent = presses.length;
@@ -102,7 +103,7 @@
   }
 
   function finish(forced) {
-    cancelAnimationFrame(raf);
+    cancelAnimationFrame(raf); clearTimeout(endT);
     var el = forced != null ? forced : (performance.now() - t0) / 1000;
     state = 'done';
     var valid = presses.filter(function (p) { return p <= el * 1000; });
